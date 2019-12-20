@@ -33,21 +33,21 @@ ifeq ($(ARCH),Msys)
 obj/decred.dll: obj sph/blake.c decred.cu
 	$(NVCC) --shared --optimize=3 --compiler-options=-GS-,-MD -I. -Isph decred.cu sph/blake.c -o obj/decred.dll
 else
-obj/decred.a: obj sph/blake.c decred.cu
-	$(NVCC) --lib --optimize=3 -I. decred.cu sph/blake.c -o obj/decred.a
+obj/libdecred.so: obj sph/blake.c decred.cu
+	$(NVCC) --shared --optimize=3 -I. decred.cu sph/blake.c -o obj/libdecred.so
 endif
 
 ifeq ($(ARCH),Msys)
 build: obj/decred.dll
 else
-build: obj/decred.a
+build: obj/libdecred.so
 endif
 	go build -tags 'cuda'
 
 ifeq ($(ARCH),Msys)
 install: obj/decred.dll
 else
-install: obj/decred.a
+install: obj/libdecred.so
 endif
 	go install -tags 'cuda'
 

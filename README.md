@@ -120,6 +120,12 @@ For OpenCL with AMD Device Library (ADL) support:
 go build -tags opencladl
 ```
 
+Add obj to LD_LIBRARY_PATH:
+
+```
+export LD_LIBRARY_PATH=obj
+```
+
 ### Windows
 
 #### Pre-Requisites
