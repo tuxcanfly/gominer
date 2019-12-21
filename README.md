@@ -1,14 +1,8 @@
 # gominer
 
 gominer is an application for performing Proof-of-Work (PoW) mining on the
-Decred network.  It supports solo and stratum/pool mining using CUDA and
+Handshake network.  It supports solo and stratum/pool mining using CUDA and
 OpenCL devices.
-
-## Downloading
-
-Linux and Windows 64-bit binaries may be downloaded from:
-
-[https://github.com/decred/decred-binaries/releases/latest](https://github.com/decred/decred-binaries/releases/latest)
 
 ## Running
 
@@ -98,8 +92,8 @@ well.
 To download and build gominer, run:
 
 ```
-go get github.com/decred/gominer
-cd $GOPATH/src/github.com/decred/gominer
+go get github.com/tuxcanfly/gominer
+cd $GOPATH/src/github.com/tuxcanfly/gominer
 cd gominer
 
 env GO111MODULE=on go build
@@ -140,13 +134,13 @@ export LD_LIBRARY_PATH=obj
   * This should have been done by the Go installer
 - Add the following locations to your PATH: `C:\Users\username\go\bin;C:\Go\bin`
 - Add `C:\Program Files\mingw-w64\x84_64-6.2.0-posix-seh-rt_v5-rev1\mingw64\bin` to your PATH (This is the latest release as of 2016-09-29)
-- `go get github.com/decred/gominer`
+- `go get github.com/tuxcanfly/gominer`
   * Compilation will most likely fail which can be safely ignored for now.
 - Change to the gominer directory
   * If using the Windows Command Prompt:
-  ```cd %GOPATH%/src/github.com/decred/gominer```
+  ```cd %GOPATH%/src/github.com/tuxcanfly/gominer```
   * If using git-bash
-  ```cd $GOPATH/src/github.com/decred/gominer```
+  ```cd $GOPATH/src/github.com/tuxcanfly/gominer```
 
 #### Build Instructions
 
@@ -161,10 +155,10 @@ export LD_LIBRARY_PATH=obj
 
 ###### Steps
 - Using git-bash:
-  * ```cd $GOPATH/src/github.com/decred/gominer```
+  * ```cd $GOPATH/src/github.com/tuxcanfly/gominer```
   * ```mingw32-make.exe```
 - Copy dependencies:
-  * ```copy obj/decred.dll .```
+  * ```copy obj/handshake.dll .```
   * ```copy nvidia/NVSMI/nvml.dll .```
 
 ##### OpenCL/ADL

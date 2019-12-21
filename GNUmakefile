@@ -17,7 +17,7 @@ endif
 #
 # Windows build assumes that CUDA V7.0 is installed in its default location.
 #
-# Windows gominer requires nvml.dll and decred.dll to reside in the same
+# Windows gominer requires nvml.dll and handshake.dll to reside in the same
 # directory as gominer.exe.
 ifeq ($(ARCH),Msys)
 obj: nvidia
@@ -30,24 +30,24 @@ endif
 	mkdir obj
 
 ifeq ($(ARCH),Msys)
-obj/decred.dll: obj sph/blake.c decred.cu
-	$(NVCC) --shared --optimize=3 --compiler-options=-GS-,-MD -I. -Isph decred.cu sph/blake.c -o obj/decred.dll
+obj/handshake.dll: obj sph/blake.c handshake.cu
+	$(NVCC) --shared --optimize=3 --compiler-options=-GS-,-MD -I. -Isph handshake.cu sph/blake.c -o obj/handshake.dll
 else
-obj/libdecred.so: obj sph/blake.c decred.cu
-	$(NVCC) --shared --optimize=3 -I. decred.cu sph/blake.c -o obj/libdecred.so
+obj/libhandshake.so: obj sph/blake.c handshake.cu
+	$(NVCC) --shared --optimize=3 -I. handshake.cu sph/blake.c -o obj/libhandshake.so
 endif
 
 ifeq ($(ARCH),Msys)
-build: obj/decred.dll
+build: obj/handshake.dll
 else
-build: obj/libdecred.so
+build: obj/libhandshake.so
 endif
 	go build -tags 'cuda'
 
 ifeq ($(ARCH),Msys)
-install: obj/decred.dll
+install: obj/handshake.dll
 else
-install: obj/libdecred.so
+install: obj/libhandshake.so
 endif
 	go install -tags 'cuda'
 

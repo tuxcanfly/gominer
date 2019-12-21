@@ -11,10 +11,10 @@ import (
 )
 
 var (
-	//kernelDll           = syscall.MustLoadDLL("decred.dll")
-	kernelDll               = syscall.MustLoadDLL("decred.dll")
-	precomputeTableProcAddr = kernelDll.MustFindProc("decred_cpu_setBlock_52").Addr()
-	kernelProcAddr          = kernelDll.MustFindProc("decred_hash_nonce").Addr()
+	//kernelDll           = syscall.MustLoadDLL("handshake.dll")
+	kernelDll               = syscall.MustLoadDLL("handshake.dll")
+	precomputeTableProcAddr = kernelDll.MustFindProc("handshake_cpu_setBlock_52").Addr()
+	kernelProcAddr          = kernelDll.MustFindProc("handshake_hash_nonce").Addr()
 )
 
 func cudaPrecomputeTable(input *[192]byte) {

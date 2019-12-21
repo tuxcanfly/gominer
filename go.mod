@@ -1,4 +1,4 @@
-module github.com/decred/gominer
+module github.com/tuxcanfly/gominer
 
 require (
 	github.com/barnex/cuda5 v0.0.0-20171012184954-da30a9b287d8
@@ -10,6 +10,10 @@ require (
 	github.com/decred/dcrd/chaincfg/chainhash v1.0.1
 	github.com/decred/dcrd/dcrutil v1.2.0
 	github.com/decred/dcrd/wire v1.2.0
+	github.com/decred/gominer v1.0.0 // indirect
 	github.com/decred/slog v1.0.0
+	github.com/jessevdk/go-flags v1.4.0
 	github.com/jrick/logrotate v1.0.0
 )
+
+go 1.13

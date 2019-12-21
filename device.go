@@ -12,9 +12,9 @@ import (
 	"github.com/decred/dcrd/chaincfg"
 	"github.com/decred/dcrd/chaincfg/chainhash"
 
-	"github.com/decred/gominer/blake256"
-	"github.com/decred/gominer/util"
-	"github.com/decred/gominer/work"
+	"github.com/tuxcanfly/gominer/blake256"
+	"github.com/tuxcanfly/gominer/util"
+	"github.com/tuxcanfly/gominer/work"
 )
 
 var chainParams = &chaincfg.MainNetParams
